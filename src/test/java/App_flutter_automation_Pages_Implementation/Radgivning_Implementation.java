@@ -1,0 +1,33 @@
+package laegeforeningen_flutter_automation_Pages_Implementation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import laegeforeningen_flutter_automation_Pages_Interface.Radgivning_Interface;
+import laegeforeningen_flutter_automation_Pages_ObjectRepository.HomePage_OR;
+import laegeforeningen_flutter_automation_Pages_ObjectRepository.Medlemskort_OR;
+import laegeforeningen_flutter_automation_Pages_ObjectRepository.Radgivning_OR;
+import laegeforeningen_flutter_automation_library.Operations;
+
+public class Radgivning_Implementation implements Radgivning_Interface  {
+	
+
+	public  void guiVerification(AndroidDriver<MobileElement> driver){
+		 
+        driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver,5);
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(HomePage_OR.Locator.heijmHeader)));
+        Operations.click(Radgivning_OR.Locator.Radgivnin_tab, driver);
+        Operations.matchAttribute(Radgivning_OR.Locator.RadgivninHeader, Radgivning_OR.UIElementConstant.RadgivnintHeaderText,"content-desc",driver);
+
+        //Operations.matchAttribute(Radgivning_OR.Locator.Radgivnin_tab, Radgivning_OR.UIElementConstant.Radgivnin_tabText, "content-desc", driver);
+        
+        
+
+	    }
+
+}

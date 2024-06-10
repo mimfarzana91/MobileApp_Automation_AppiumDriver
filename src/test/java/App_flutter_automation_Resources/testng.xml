@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+    <listener class-name="laegeforeningen_flutter_automation_listener.ExtentTestNGIReporterListener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="laegeforeningen_flutter_automation_AppiumDriver">
+        <classes>
+            <class name="laegeforeningen_flutter_automation_Pages_TestCases.HomePage_TestCase"></class>
+            <class name="laegeforeningen_flutter_automation_Pages_TestCases.Radgivning_TestCase"></class>
+            <class name="laegeforeningen_flutter_automation_Pages_TestCases.Ugeskriftet_TestCase"></class>
+            <class name="laegeforeningen_flutter_automation_Pages_TestCases.Medlemskort_TestCase"></class>
+
+        </classes>
+    </test>
+</suite>
